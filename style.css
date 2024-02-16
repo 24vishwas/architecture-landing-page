@@ -960,12 +960,12 @@ footer {
 footer {
     /* font-family: initial;*/
     /* background-image: url(./assets/wp4698149-modern-architecture-night-wallpapers.jpg); */
-    background-image: url(./assets/bg-3.jpg);
+    /* background-image: url(./assets/bg-3.jpg);
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: cover; */
     min-height: 600px;
-    
+    background-color: #00000089;
     
 
     width: 100%;
@@ -973,7 +973,7 @@ footer {
     padding-top: 30px;
     position: relative;
     margin-top: 5%;
-    z-index: -2;
+    /* z-index: -2; */
 }
 footer::after{
     content: '';
@@ -982,6 +982,10 @@ footer::after{
     height: 100%;
     width: 100%;
     background-color: #00000089;
+    background-image: url(./assets/bg-3.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     z-index: -1;
 }
 
