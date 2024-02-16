@@ -574,7 +574,9 @@ h5 {
 .inner-content>img {
     width: 40px;
 }
-
+.inner-content p{
+    text-align: justify;
+}
 .inner-tile {
     /* position: absolute; */
     background-color: white;
@@ -596,11 +598,8 @@ h5 {
     margin-top: 20px;
 }
 
-.inner-tile>img {
-    width: 32px !important;
-}
 
-.secret-heading {
+/* .secret-heading {
     font-size: 120px;
     position: absolute;
     opacity: 1;
@@ -618,7 +617,7 @@ h5 {
     font-family: var(--heading-font);
     transition: .3s ease-in-out;
 
-}
+} */
 
 /* service-section */
 .service-wrapper{
