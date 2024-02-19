@@ -856,7 +856,7 @@ h5 {
 
 
 
-
+/* contact-section */
 
 
 .contact-section {
@@ -904,27 +904,27 @@ h5 {
     min-width: calc(45% - 20px);
     height: 50px;
     padding-left: 10px;
-    box-shadow: 0 0 20px 0 #fafafa;
-
+    /* box-shadow: 0 0 20px 0 #fafafa; */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-.contact-form form button,
+
 .contact-form textarea {
     width: 100%;
-    box-shadow: 0 0 20px 0 #fafafa;
+    /* box-shadow: 0 0 20px 0 #fafafa; */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
     border: none;
 }
-
+.contact-form form button{
+    width: 100%;
+}
 .contact-form textarea {
     font-size: 1rem;
     font-family: jost, sans-serif;
     padding-left: 10px;
     padding-top: 10px;
 }
-
-.contact-form form button {
-    color: white;
-}
+/*  */
 
 @media (max-width:991px) {
     .contact-section{
