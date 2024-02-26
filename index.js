@@ -28,6 +28,48 @@ window.addEventListener('resize', checkOrientation);
 
 
 
+// Gallery section
+const filterContainer = document.querySelector(".gallery-filter"),
+galleryItems = document.querySelectorAll(".gallery-item");
+
+filterContainer.addEventListener("click", (event) =>{
+  if(event.target.classList.contains("filter-item")){
+       // deactivate existing active 'filter-item'
+       filterContainer.querySelector(".active").classList.remove("active");
+       // activate new 'filter-item'
+       event.target.classList.add("active");
+       const filterValue = event.target.getAttribute("data-filter");
+       galleryItems.forEach((item) =>{
+      if(item.classList.contains(filterValue) || filterValue === 'all'){
+          item.classList.remove("hide");
+           item.classList.add("show");
+      }
+      else{
+          item.classList.remove("show");
+          item.classList.add("hide");
+      }
+       });
+  }
+});
+
+
+// gallery lightbox
+function openLightbox(event, element) {
+ event.preventDefault();
+ document.body.classList.add('lightbox-open');
+ var lightbox = document.getElementById('lightbox');
+ var lightboxImg = document.getElementById('lightbox-img');
+
+ lightboxImg.src = element.href;
+ lightbox.style.display = 'flex';
+}
+
+function closeLightbox() {
+ document.body.classList.remove('lightbox-open');
+ document.getElementById('lightbox').style.display = 'none';
+}
+
+
 
 
 
@@ -50,6 +92,38 @@ var swiper = new Swiper(".mySwiper", {
     },
     autoplay: {
         delay: 2500,
+        disableOnInteraction: true,
+      },
+  });
+
+var swiper = new Swiper(".project-swiper", {
+    spaceBetween: 30,
+    pagination: {
+      el: ".swiper-pagination",
+      dynamicBullets: true,
+    },
+    autoplay: {
+        delay: 2500,
         disableOnInteraction: false,
       },
   });
+
+
+  // const cardContainer = document.getElementById('project-wrapper');
+  // cardContainer.addEventListener('mouseenter', function(event) {
+
+  //   if (event.target.classList.contains('project')) {
+  //       // Add the 'custom-class' class to the .card-content element of the hovered card
+  //       const cardContent = event.target.querySelector('.swiper');
+  //       cardContent.classList.add(' .project-swiper');
+  //     }
+  // });
+
+  // cardContainer.addEventListener('mouseleave', function(event) {
+
+  //   if (event.target.classList.contains('project')) {
+  //       // Remove the 'custom-class' class from the .card-content element of the hovered card
+  //       const cardContent = event.target.querySelector('.swiper');
+  //       cardContent.classList.remove(' .project-swiper');
+  //     }
+  // });

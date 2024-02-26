@@ -266,6 +266,8 @@ h5 {
 
 }
 
+/* HERO-SECTION */
+
 .hero-container {
     display: flex;
     align-items: center;
@@ -293,10 +295,12 @@ h5 {
 
 .hero-container p {
     color: rgb(38, 37, 37);
-    ;
-    font-size: 22px;
+    
+    font-size: 18px;
 }
-
+.hero-container button{
+    margin-top: 50px;
+}
 
 .primary-btn {
     background-color: #013f4b00;
@@ -527,7 +531,7 @@ h5 {
 }
 
 
-.project>img {
+.project img {
     border-radius: 5px 5px 0 0;
     max-height: 350px;
     width: 100%;
@@ -761,13 +765,18 @@ h5 {
 
 
 
+/* TESTIMONIAL SECTION */
+
 .testimonial-section{
     position: relative;
     padding-block: 5%;
+    margin-block: 5%;
 }
 
 .testimonial-wrapper {
     position: relative;
+    width: 95%;
+    margin-inline: auto;
 }
 .testimonial-wrapper .section-title{
     text-align: center;
@@ -805,28 +814,49 @@ h5 {
 }
 .temp {
     text-align: center;
+    position: relative;
+   
+    /* background-image: url(./assets/farmhouse-4.jpg); */
 }
 
-.review {
+.review-img img{
+width: 100%;
+height: 100%;
+object-fit: cover;
+object-position: center;
+/* border-radius: 20px; */
+}
+.review{
+    background-color: rgba(0, 0, 0, 0.567);
     display: flex;
-    /* width: 50%; */
+    height: 400px;
+    justify-content: space-between;
+}
+.review-img{
+    width: 50%;
+}
+
+
+.review-content {
+    display: flex;
+    width: 50%;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    border: 1px solid rgb(0, 0, 0);
-    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
-    background-color: rgba(0, 0, 0, 0.39);
+    /* border: 1px solid rgb(0, 0, 0); */
+    /* box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px; */
+    
     border-radius: 20px;
     /* text-align: center; */
 }
 
-.review h3 {
+.review-content h3 {
     color: #fafafa;
 }
 
-.review p {
-    width: 70%;
+.review-content p {
+    /* width: 70%; */
     margin-bottom: 5%;
     color: #c9cacb;
 }
@@ -839,9 +869,26 @@ h5 {
     background: #adadad;
 }
 
+@media (max-width:767px) {
+    .review{
+        flex-direction: column-reverse;
+        height: fit-content;
+    }
+    .review-content{
+        width: 100%;
+    }
+    .review-img{
+        width: 100%;
+    }
+    .review-img img{
+        max-height: 350px;
+    }
+    
+}
+
 @media (max-width:500px) {
     .testimonial-wrapper {
-        text-align: center;
+        /* text-align: center; */
     }
 
     .testimonial-wrapper .section-sub-title {
@@ -1071,5 +1118,189 @@ footer>h1 {
         /* justify-content: center; */
         align-items: center;
         row-gap: 20px;
+    }
+}
+
+
+
+
+
+/* Gallery section */
+.gallery {
+    width: 100%;
+    display: block;
+    /* min-height: 100vh; */
+    /* background-color: #2a2932; */
+    /* padding: 100px 0; */
+    margin-block: 5%;
+}
+
+.gallery .gallery-filter {
+    padding: 0 15px;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery .gallery-filter .filter-item {
+    color: #000000;
+    font-size: 15px;
+    /* text-transform: uppercase; */
+    /* display: inline-block; */
+    margin: 0 10px;
+    cursor: pointer;
+    /* border-bottom: 2px solid transparent; */
+    line-height: 1.2;
+    transition: all 0.3s ease;
+    width: 120px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.gallery h1 {
+    text-align: center;
+}
+
+.gallery .gallery-filter .filter-item.active {
+    color: #fff;
+    /* border-color : #ff9800; */
+    background-color: #636363;
+}
+
+.gallery .gallery-item {
+    /* width: calc(100% / 3); */
+    width: 25%;
+    padding: 15px;
+}
+
+.gallery .gallery-item-inner img {
+    width: 100%;
+}
+
+.gallery .gallery-item.show {
+    animation: fadeIn 0.9s ease;
+}
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.gallery .gallery-item.hide {
+    display: none;
+}
+
+/*responsive*/
+@media(max-width: 991px) {
+    .gallery .gallery-item {
+        width: 33.333333%;
+    }
+}
+
+@media(max-width: 567px) {
+    .gallery .gallery-item {
+        width: 50%;
+    }
+
+    .gallery .gallery-filter .filter-item {
+        margin-bottom: 10px;
+    }
+}
+
+.gallery-item-inner {
+    position: relative;
+}
+
+.overlay-zoom {
+    width: 31px;
+    height: auto;
+}
+
+.gallery-overlay {
+    background: rgba(0, 0, 0, 0.75);
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    bottom: 12px;
+    left: 12px;
+    opacity: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.gallery-item-inner:hover .gallery-overlay {
+    opacity: 1;
+    -webkit-transform: scale(0.95);
+    -ms-transform: scale(0.95);
+    transform: scale(0.95);
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+.lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.close-icon {
+    position: absolute;
+    top: 30px;
+    right: 10px;
+    color: #fff;
+    font-size: 34px;
+    cursor: pointer;
+    /* background-color: blue; */
+}
+
+body.lightbox-open {
+    overflow: hidden;
+    height: 100vh;
+}
+
+/* Media queries for responsiveness */
+@media(max-width: 600px) {
+
+    .lightbox img {
+        max-width: 95%;
+        max-height: auto;
     }
 }
