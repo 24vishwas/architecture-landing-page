@@ -127,3 +127,33 @@ var swiper = new Swiper(".project-swiper", {
   //       cardContent.classList.remove(' .project-swiper');
   //     }
   // });
+
+  document.getElementById("emailForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+    sendEmail();
+});
+
+
+  function sendEmail() {
+
+
+    let name = document.getElementById("name").value;
+    let email = document.getElementById("email").value;
+    let phone = document.getElementById("phone").value;
+    let subject = document.getElementById("subject").value;
+    let message = document.getElementById("message").value;
+    let finalmessage = `Name : ${name} <br> Phone no : ${phone} <br>  Email : ${email} <br> Subject : ${subject} <br>  Message : ${message} <br>`;
+   
+    // SecureToken : "42F7B7F1F4BF759FA3F6CA28B1909617F290",
+    Email.send({
+      Host : "smtp.elasticemail.com",
+      Username : "vishwasjs2806@gmail.com",
+      Password : "42F7B7F1F4BF759FA3F6CA28B1909617F290",
+      To : 'vishurao2001@gmail.com',
+      From : "vishwasjs2806@gmail.com",
+      Subject : "This is the subject",
+      Body : finalmessage
+  }).then(
+    message => alert(message)
+  );
+}
