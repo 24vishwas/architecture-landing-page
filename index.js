@@ -144,11 +144,14 @@ var swiper = new Swiper(".project-swiper", {
     let message = document.getElementById("message").value;
     let finalmessage = `Name : ${name} <br> Phone no : ${phone} <br>  Email : ${email} <br> Subject : ${subject} <br>  Message : ${message} <br>`;
    
+    // 7acc0f74-e899-4f9f-8b8f-ff384167d98b
+
     // SecureToken : "42F7B7F1F4BF759FA3F6CA28B1909617F290",
     Email.send({
-      Host : "smtp.elasticemail.com",
-      Username : "vishwasjs2806@gmail.com",
-      Password : "42F7B7F1F4BF759FA3F6CA28B1909617F290",
+      SecureToken : "7acc0f74-e899-4f9f-8b8f-ff384167d98b",
+      // Host : "smtp.elasticemail.com",
+      // Username : "vishwasjs2806@gmail.com",
+      // Password : "42F7B7F1F4BF759FA3F6CA28B1909617F290",
       To : 'vishurao2001@gmail.com',
       From : "vishwasjs2806@gmail.com",
       Subject : "This is the subject",
