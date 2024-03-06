@@ -70,19 +70,7 @@ function closeLightbox() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+// testimonial 
 
 var swiper = new Swiper(".mySwiper", {
     spaceBetween: 30,
@@ -96,6 +84,8 @@ var swiper = new Swiper(".mySwiper", {
       },
   });
 
+
+// project section 
 var swiper = new Swiper(".project-swiper", {
     spaceBetween: 30,
     pagination: {
@@ -109,25 +99,8 @@ var swiper = new Swiper(".project-swiper", {
   });
 
 
-  // const cardContainer = document.getElementById('project-wrapper');
-  // cardContainer.addEventListener('mouseenter', function(event) {
-
-  //   if (event.target.classList.contains('project')) {
-  //       // Add the 'custom-class' class to the .card-content element of the hovered card
-  //       const cardContent = event.target.querySelector('.swiper');
-  //       cardContent.classList.add(' .project-swiper');
-  //     }
-  // });
-
-  // cardContainer.addEventListener('mouseleave', function(event) {
-
-  //   if (event.target.classList.contains('project')) {
-  //       // Remove the 'custom-class' class from the .card-content element of the hovered card
-  //       const cardContent = event.target.querySelector('.swiper');
-  //       cardContent.classList.remove(' .project-swiper');
-  //     }
-  // });
-
+  
+// contact form
   document.getElementById("emailForm").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent the default form submission behavior
     sendEmail();
